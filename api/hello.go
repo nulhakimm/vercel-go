@@ -1,4 +1,4 @@
-package main
+package handler
 
 import (
 	"os"
@@ -8,7 +8,7 @@ import (
 	"github.com/vercel/go-bridge/go/bridge"
 )
 
-func main() {
+func init() {
 	app := fiber.New()
 
 	app.Get("/", func(c *fiber.Ctx) error {
@@ -19,6 +19,5 @@ func main() {
 		return c.SendString(message)
 	})
 
-	// Handle the request using Fiber
 	bridge.Start(adaptor.FiberApp(app))
 }
