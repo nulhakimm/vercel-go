@@ -1,10 +1,11 @@
 package main
 
 import (
-	"log"
 	"os"
 
+	"github.com/gofiber/adaptor/v2"
 	"github.com/gofiber/fiber/v2"
+	"github.com/vercel/go-bridge/go/bridge"
 )
 
 func main() {
@@ -18,10 +19,6 @@ func main() {
 		return c.SendString(message)
 	})
 
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "3000"
-	}
-
-	log.Fatal(app.Listen(":" + port))
+	// Handle the request using Fiber
+	bridge.Start(adaptor.FiberApp(app))
 }

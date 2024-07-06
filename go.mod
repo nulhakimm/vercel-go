@@ -2,10 +2,15 @@ module github.com/nulhakimm/vercel-go
 
 go 1.20
 
-require github.com/gofiber/fiber/v2 v2.52.5
+require (
+	github.com/gofiber/adaptor/v2 v2.2.1
+	github.com/gofiber/fiber/v2 v2.52.5
+	github.com/vercel/go-bridge v0.0.0-20221108222652-296f4c6bdb6d
+)
 
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
+	github.com/aws/aws-lambda-go v1.47.0 // indirect
 	github.com/google/uuid v1.5.0 // indirect
 	github.com/klauspost/compress v1.17.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
