@@ -8,7 +8,7 @@ import (
 	"github.com/vercel/go-bridge/go/bridge"
 )
 
-func init() {
+func Handler() {
 	app := fiber.New()
 
 	app.Get("/", func(c *fiber.Ctx) error {
